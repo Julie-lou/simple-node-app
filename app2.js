@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.get("/", (req, res) => {
-  res.send("Hello from my DevOps pipeline!");
+  res.send("YAY IT WORKS!");
 });
 
 app.get("/health", (req, res) => {
