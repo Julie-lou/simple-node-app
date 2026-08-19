@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello this is VERSION 2 branch!");
+  res.send("HELLO FROM V2");
 });
 
 app.get("/health", (req, res) => {
