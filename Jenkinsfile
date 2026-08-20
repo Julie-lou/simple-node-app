@@ -29,7 +29,16 @@ pipeline {
         stage('Build Docker Image') {
             steps {
             sh 'docker build -t ${DOCKER_IMAGE}:pr-${CHANGE_ID} .'
-    }
-}
+            }
+        }
+        stage('Check Main') {
+            when {
+            branch 'main'
+            }
+            steps {
+                echo "This is the MAIN branch"
+                echo "Branch: ${env.BRANCH_NAME}"
+            }
+        }
     }
 }
