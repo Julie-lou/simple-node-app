@@ -19,7 +19,8 @@ pipeline {
                 sh 'docker build -t simple-node-app-pr-test .'
             }
         }
-        step(
+        stage('Report to Github'){
+            steps(
             [$class: 'GitHubCommitStatusSetter',
              contextSource: [$class: 'ManuallyEnteredCommitContextSource', 
              context: 'Jenkins PR Validation'], 
