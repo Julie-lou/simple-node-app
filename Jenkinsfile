@@ -60,5 +60,10 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+            sh 'docker build -t ${DOCKER_IMAGE}:pr-${CHANGE_ID} .'
+    }
+}
     }
 }
